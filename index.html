@@ -5,95 +5,330 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Heart Mission</title>
+<title>Gift</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
 <style>
 
 /* BODY */
 
 body{
+
 margin:0;
+
+font-family:'Cinzel', serif;
+
 overflow:hidden;
-background:#4B0F1B;
-font-family:serif;
+
 }
 
-/* COUNTER BOX */
+/* LOADING */
 
-.counterBox{
+#loading{
 
 position:fixed;
 
-top:20px;
-left:50%;
+width:100%;
+height:100vh;
 
-transform:translateX(-50%);
+background:#4B0F1B;
 
-background:white;
+display:flex;
 
-border:2px solid #C2A45C;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 
-padding:12px 24px;
-
-border-radius:12px;
-
-font-weight:bold;
-
-color:#4B0F1B;
-
-box-shadow:
-0 5px 15px rgba(0,0,0,0.3);
-
-z-index:100;
+color:#C2A45C;
 
 }
 
-/* HEART */
+.loading-text{
 
-.heart{
+margin-bottom:30px;
 
-position:absolute;
+letter-spacing:3px;
 
-width:26px;
-height:26px;
+}
 
-background:#E4C98A;
+.bar{
 
-transform:rotate(45deg);
+width:280px;
+
+height:6px;
+
+background:#6A1B2B;
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+.progress{
+
+height:100%;
+
+width:0%;
+
+background:linear-gradient(
+90deg,
+#C2A45C,
+#E4C98A
+);
+
+animation:load 9s forwards;
+
+}
+
+@keyframes load{
+
+0%{width:0%;}
+100%{width:100%;}
+
+}
+
+/* TREASURE SECTION */
+
+#treasure{
+
+display:none;
+
+height:100vh;
+
+background:linear-gradient(
+135deg,
+#4B0F1B,
+#6A1B2B
+);
+
+color:#C2A45C;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+}
+
+/* TITLE */
+
+.treasureTitle{
+
+font-family:'Great Vibes', cursive;
+
+font-size:42px;
+
+margin-bottom:30px;
+
+}
+
+/* TREASURE BOX */
+
+.treasureBox{
+
+width:150px;
+height:150px;
+
+background:linear-gradient(
+145deg,
+#E4C98A,
+#C2A45C
+);
+
+border-radius:14px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,0.4);
 
 cursor:pointer;
 
-box-shadow:
-0 0 12px #E4C98A;
+transition:0.3s;
 
 }
 
-/* HEART SHAPE */
+.treasureBox:hover{
 
-.heart:before,
-.heart:after{
+transform:scale(1.05);
 
-content:"";
+}
 
-width:26px;
-height:26px;
+/* PASSWORD CARD */
 
-background:#E4C98A;
+#passwordCard{
+
+display:none;
+
+margin-top:30px;
+
+background:white;
+
+padding:30px;
+
+border-radius:14px;
+
+border:2px solid #C2A45C;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,0.3);
+
+}
+
+/* TEXT */
+
+.passTitle{
+
+color:#4B0F1B;
+
+margin-bottom:15px;
+
+}
+
+/* INPUT */
+
+#passwordInput{
+
+padding:12px;
+
+border-radius:8px;
+
+border:1px solid #C2A45C;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+/* BUTTON */
+
+.unlockBtn{
+
+padding:10px 25px;
+
+border-radius:30px;
+
+border:none;
+
+background:#4B0F1B;
+
+color:#C2A45C;
+
+cursor:pointer;
+
+}
+
+/* ENVELOPE */
+
+#envelopeSection{
+
+display:none;
+
+height:100vh;
+
+background:#F5F3EF;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+}
+
+/* ENVELOPE */
+
+.envelope{
+
+width:320px;
+height:200px;
+
+background:#4B0F1B;
+
+position:relative;
+
+border-radius:8px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,0.3);
+
+}
+
+/* SEAL */
+
+.seal{
+
+width:60px;
+height:60px;
+
+background:#7A1F2E;
 
 border-radius:50%;
 
 position:absolute;
 
+top:70px;
+left:50%;
+
+transform:translateX(-50%);
+
+cursor:pointer;
+
 }
 
-.heart:before{
-top:-13px;
-left:0;
+/* LETTER */
+
+.letter{
+
+display:none;
+
+width:340px;
+
+margin-top:30px;
+
+background:linear-gradient(
+145deg,
+#E4C98A,
+#D6B772
+);
+
+padding:35px;
+
+border-radius:8px;
+
+border:2px solid #C2A45C;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,0.3);
+
 }
 
-.heart:after{
-left:-13px;
-top:0;
+/* TITLE */
+
+.letterTitle{
+
+text-align:center;
+
+color:#4B0F1B;
+
+margin-bottom:15px;
+
+}
+
+/* SCRIPT */
+
+.script{
+
+font-family:'Great Vibes', cursive;
+
+font-size:30px;
+
+color:#4B0F1B;
+
+text-align:center;
+
+line-height:1.8;
+
 }
 
 </style>
@@ -102,96 +337,162 @@ top:0;
 
 <body>
 
-<div class="counterBox" id="counter">
+<!-- LOADING -->
 
-❤️ 0 / 15
+<div id="loading">
+
+<div class="loading-text">
+
+Preparing your gift...
+
+</div>
+
+<div class="bar">
+
+<div class="progress"></div>
+
+</div>
+
+</div>
+
+<!-- TREASURE -->
+
+<div id="treasure">
+
+<div class="treasureTitle">
+
+Your Treasure Awaits
+
+</div>
+
+<div class="treasureBox"
+
+onclick="showPassword()">
+
+</div>
+
+<div id="passwordCard">
+
+<div class="passTitle">
+
+Enter Password
+
+</div>
+
+<input 
+type="text"
+id="passwordInput"
+placeholder="Enter number">
+
+<br>
+
+<button class="unlockBtn"
+
+onclick="checkPassword()">
+
+Unlock Treasure
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ENVELOPE -->
+
+<div id="envelopeSection">
+
+<div class="envelope">
+
+<div class="seal"
+
+onclick="openLetter()">
+
+</div>
+
+</div>
+
+<div class="letter"
+
+id="letter">
+
+<div class="letterTitle">
+
+A Small Note
+
+</div>
+
+<div class="script">
+
+Happy Birthday Shafa,<br><br>
+
+May Allah bless you<br>
+with happiness,<br>
+good health,<br>
+and beautiful moments ahead.
+
+</div>
+
+</div>
 
 </div>
 
 <script>
 
-/* SETTINGS */
+/* LOADING */
 
-let count=0;
-let target=15;
+setTimeout(()=>{
 
-/* SPAWN HEART */
+document.getElementById("loading")
+.style.display="none";
 
-function spawnHeart(){
+document.getElementById("treasure")
+.style.display="flex";
 
-let heart=document.createElement("div");
+},9000);
 
-heart.className="heart";
+/* SHOW PASSWORD */
 
-/* RANDOM POSITION */
+function showPassword(){
 
-heart.style.left=Math.random()*90+"vw";
-
-heart.style.top="-40px";
-
-/* CLICK EVENT */
-
-heart.onclick=function(){
-
-heart.remove();
-
-count++;
-
-updateCounter();
-
-if(count>=target){
-
-finishGame();
+document.getElementById("passwordCard")
+.style.display="block";
 
 }
 
-};
+/* PASSWORD */
 
-/* ADD TO BODY */
+let correctPassword="15";
 
-document.body.appendChild(heart);
+function checkPassword(){
 
-/* FALL MOTION */
+let input=
+document.getElementById("passwordInput").value;
 
-let fall=setInterval(()=>{
+if(input===correctPassword){
 
-let top=parseInt(heart.style.top);
+document.getElementById("treasure")
+.style.display="none";
 
-heart.style.top=(top+2)+"px";
-
-/* REMOVE IF OUT */
-
-if(top>window.innerHeight){
-
-heart.remove();
-
-clearInterval(fall);
+document.getElementById("envelopeSection")
+.style.display="flex";
 
 }
 
-},20);
+else{
+
+alert("Wrong password");
 
 }
 
-/* SPAWN LOOP */
-
-setInterval(spawnHeart,800);
-
-/* UPDATE COUNTER */
-
-function updateCounter(){
-
-document.getElementById("counter")
-
-.innerHTML="❤️ "+count+" / "+target;
-
 }
 
-/* FINISH */
+/* OPEN LETTER */
 
-function finishGame(){
+function openLetter(){
 
-alert("Mission Complete!");
+document.getElementById("letter")
+.style.display="block";
 
 }
 
