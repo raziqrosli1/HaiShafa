@@ -5,201 +5,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gift Experience</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<title>Heart Mission</title>
 
 <style>
 
+/* BODY */
+
 body{
 margin:0;
-font-family:'Cinzel', serif;
 overflow:hidden;
+background:#4B0F1B;
+font-family:serif;
 }
 
-/* ================= */
-/* LOADING */
-/* ================= */
+/* COUNTER BOX */
 
-#loading{
+.counterBox{
 
 position:fixed;
-width:100%;
-height:100vh;
 
-background:#4B0F1B;
+top:20px;
+left:50%;
 
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
+transform:translateX(-50%);
 
-color:#C2A45C;
+background:white;
 
-}
+border:2px solid #C2A45C;
 
-.loading-text{
+padding:12px 24px;
 
-margin-bottom:30px;
-letter-spacing:3px;
+border-radius:12px;
 
-}
+font-weight:bold;
 
-.bar{
-
-width:280px;
-height:6px;
-
-background:#6A1B2B;
-
-border-radius:10px;
-
-overflow:hidden;
-
-margin-top:20px;
-
-}
-
-.progress{
-
-height:100%;
-width:0%;
-
-background:linear-gradient(
-90deg,
-#C2A45C,
-#E4C98A
-);
-
-animation:load 9s forwards;
-
-box-shadow:0 0 15px #C2A45C;
-
-}
-
-@keyframes load{
-
-0%{width:0%;}
-100%{width:100%;}
-
-}
-
-/* ================= */
-/* LANDING */
-/* ================= */
-
-#landing{
-
-display:none;
-
-height:100vh;
-
-background:linear-gradient(
-135deg,
-#4B0F1B,
-#6A1B2B
-);
-
-color:#C2A45C;
-
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-.title{
-
-font-family:'Great Vibes', cursive;
-font-size:48px;
-
-margin-bottom:10px;
-
-}
-
-.subtitle{
-
-letter-spacing:2px;
-
-margin-bottom:30px;
-
-max-width:300px;
-
-}
-
-.button{
-
-padding:14px 40px;
-
-border-radius:40px;
-
-border:1px solid #C2A45C;
-
-background:transparent;
-
-color:#C2A45C;
-
-cursor:pointer;
-
-transition:0.4s;
-
-}
-
-.button:hover{
-
-background:#C2A45C;
 color:#4B0F1B;
 
 box-shadow:
-0 0 20px #C2A45C;
+0 5px 15px rgba(0,0,0,0.3);
+
+z-index:100;
 
 }
 
-/* ================= */
-/* GAME */
-/* ================= */
-
-#game{
-
-display:none;
-
-height:100vh;
-
-background:#4B0F1B;
-
-position:relative;
-
-overflow:hidden;
-
-}
+/* HEART */
 
 .heart{
 
 position:absolute;
 
-width:22px;
-height:22px;
+width:26px;
+height:26px;
 
 background:#E4C98A;
 
 transform:rotate(45deg);
+
+cursor:pointer;
 
 box-shadow:
 0 0 12px #E4C98A;
 
 }
 
+/* HEART SHAPE */
+
 .heart:before,
 .heart:after{
 
 content:"";
 
-width:22px;
-height:22px;
+width:26px;
+height:26px;
 
 background:#E4C98A;
 
@@ -210,150 +87,13 @@ position:absolute;
 }
 
 .heart:before{
-
-top:-11px;
+top:-13px;
 left:0;
-
 }
 
 .heart:after{
-
-left:-11px;
+left:-13px;
 top:0;
-
-}
-
-@keyframes fall{
-
-0%{top:-30px;}
-100%{top:100vh;}
-
-}
-
-.counter{
-
-position:absolute;
-
-top:20px;
-left:20px;
-
-color:#C2A45C;
-
-font-size:16px;
-
-}
-
-/* ================= */
-/* CELEBRATION */
-/* ================= */
-
-#celebration{
-
-display:none;
-
-height:100vh;
-
-background:#4B0F1B;
-
-color:#C2A45C;
-
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-text-align:center;
-
-}
-
-/* ================= */
-/* ENVELOPE */
-/* ================= */
-
-#unlock{
-
-display:none;
-
-height:100vh;
-
-background:#F5F3EF;
-
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-}
-
-.envelope{
-
-width:340px;
-height:220px;
-
-background:#4B0F1B;
-
-position:relative;
-
-border-radius:6px;
-
-cursor:pointer;
-
-box-shadow:
-0 20px 40px rgba(0,0,0,0.3);
-
-}
-
-.seal{
-
-width:60px;
-height:60px;
-
-background:#7A1F2E;
-
-border-radius:50%;
-
-position:absolute;
-
-top:80px;
-left:140px;
-
-box-shadow:
-0 0 10px rgba(0,0,0,0.4);
-
-cursor:pointer;
-
-}
-
-.paper{
-
-display:none;
-
-width:300px;
-
-background:linear-gradient(
-145deg,
-#E4C98A,
-#D6B772
-);
-
-margin-top:30px;
-
-padding:30px;
-
-border-radius:6px;
-
-}
-
-.script{
-
-font-family:'Great Vibes', cursive;
-
-font-size:30px;
-
-color:#4B0F1B;
-
-text-align:center;
-
-line-height:1.8;
-
 }
 
 </style>
@@ -362,173 +102,34 @@ line-height:1.8;
 
 <body>
 
-<!-- LOADING -->
+<div class="counterBox" id="counter">
 
-<div id="loading">
-
-<div class="loading-text">
-
-Preparing your gift...
-
-</div>
-
-<div class="bar">
-
-<div class="progress"></div>
-
-</div>
-
-</div>
-
-<!-- LANDING -->
-
-<div id="landing">
-
-<div class="title">
-
-Hi Shafa
-
-</div>
-
-<div class="subtitle">
-
-Before you open your gift,  
-complete a small challenge first.
-
-</div>
-
-<button class="button"
-
-onclick="startGame()">
-
-Start Challenge
-
-</button>
-
-</div>
-
-<!-- GAME -->
-
-<div id="game">
-
-<div class="counter"
-
-id="counter">
-
-0 / 13
-
-</div>
-
-</div>
-
-<!-- CELEBRATION -->
-
-<div id="celebration">
-
-<h2>
-
-Congratulations
-
-</h2>
-
-<p>
-
-You unlocked the next step.
-
-</p>
-
-<button class="button"
-
-onclick="goEnvelope()">
-
-Continue
-
-</button>
-
-</div>
-
-<!-- ENVELOPE -->
-
-<div id="unlock">
-
-<div class="envelope">
-
-<div class="seal"
-
-onclick="openLetter()">
-
-</div>
-
-</div>
-
-<div class="paper"
-
-id="paper">
-
-<div class="script">
-
-Happy Birthday,<br>
-
-May Allah bless you<br>
-with happiness,<br>
-peace,<br>
-and beautiful moments ahead.
-
-</div>
-
-</div>
+❤️ 0 / 15
 
 </div>
 
 <script>
 
-/* LOADING */
-
-setTimeout(function(){
-
-document.getElementById("loading").style.display="none";
-
-document.getElementById("landing").style.display="flex";
-
-},9000);
-
-/* GAME */
+/* SETTINGS */
 
 let count=0;
+let target=15;
 
-let target=13;
-
-function startGame(){
-
-document.getElementById("landing").style.display="none";
-
-document.getElementById("game").style.display="block";
-
-spawnMany();
-
-}
-
-function spawnMany(){
-
-for(let i=0;i<3;i++){
-
-spawnHeart();
-
-}
-
-}
+/* SPAWN HEART */
 
 function spawnHeart(){
 
 let heart=document.createElement("div");
 
-heart.classList.add("heart");
+heart.className="heart";
 
-heart.style.left=Math.random()*window.innerWidth+"px";
+/* RANDOM POSITION */
 
-heart.style.top="-30px";
+heart.style.left=Math.random()*90+"vw";
 
-heart.style.animation="fall 3s linear";
+heart.style.top="-40px";
+
+/* CLICK EVENT */
 
 heart.onclick=function(){
 
@@ -536,49 +137,61 @@ heart.remove();
 
 count++;
 
-document.getElementById("counter").innerHTML=
+updateCounter();
 
-count+" / "+target;
+if(count>=target){
 
-if(count<target){
-
-spawnHeart();
-
-}
-
-else{
-
-celebrate();
+finishGame();
 
 }
 
 };
 
-document.getElementById("game")
+/* ADD TO BODY */
 
-.appendChild(heart);
+document.body.appendChild(heart);
+
+/* FALL MOTION */
+
+let fall=setInterval(()=>{
+
+let top=parseInt(heart.style.top);
+
+heart.style.top=(top+2)+"px";
+
+/* REMOVE IF OUT */
+
+if(top>window.innerHeight){
+
+heart.remove();
+
+clearInterval(fall);
 
 }
 
-function celebrate(){
-
-document.getElementById("game").style.display="none";
-
-document.getElementById("celebration").style.display="flex";
+},20);
 
 }
 
-function goEnvelope(){
+/* SPAWN LOOP */
 
-document.getElementById("celebration").style.display="none";
+setInterval(spawnHeart,800);
 
-document.getElementById("unlock").style.display="flex";
+/* UPDATE COUNTER */
+
+function updateCounter(){
+
+document.getElementById("counter")
+
+.innerHTML="❤️ "+count+" / "+target;
 
 }
 
-function openLetter(){
+/* FINISH */
 
-document.getElementById("paper").style.display="block";
+function finishGame(){
+
+alert("Mission Complete!");
 
 }
 
