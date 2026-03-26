@@ -3,9 +3,10 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Gift</title>
+<title>Gift Experience</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
@@ -18,6 +19,8 @@ body{
 margin:0;
 
 font-family:'Cinzel', serif;
+
+background:#4B0F1B;
 
 overflow:hidden;
 
@@ -32,7 +35,12 @@ position:fixed;
 width:100%;
 height:100vh;
 
-background:#4B0F1B;
+background:
+linear-gradient(
+to bottom,
+#4B0F1B,
+#2B0610
+);
 
 display:flex;
 
@@ -44,19 +52,33 @@ color:#C2A45C;
 
 }
 
+/* LOADING TEXT */
+
 .loading-text{
+
+letter-spacing:4px;
 
 margin-bottom:30px;
 
-letter-spacing:3px;
+font-size:16px;
+
+animation:fadeText 2s forwards;
 
 }
 
+@keyframes fadeText{
+
+0%{opacity:0;}
+100%{opacity:1;}
+
+}
+
+/* PROGRESS BAR */
+
 .bar{
 
-width:280px;
-
-height:6px;
+width:300px;
+height:7px;
 
 background:#6A1B2B;
 
@@ -64,21 +86,27 @@ border-radius:10px;
 
 overflow:hidden;
 
+box-shadow:
+inset 0 0 8px rgba(0,0,0,0.5);
+
 }
 
 .progress{
 
 height:100%;
-
 width:0%;
 
-background:linear-gradient(
+background:
+linear-gradient(
 90deg,
-#C2A45C,
-#E4C98A
+#E4C98A,
+#FFF3C4,
+#C2A45C
 );
 
-animation:load 9s forwards;
+animation:
+load 9s forwards,
+shine 2s infinite;
 
 }
 
@@ -89,7 +117,15 @@ animation:load 9s forwards;
 
 }
 
-/* TREASURE SECTION */
+@keyframes shine{
+
+0%{filter:brightness(1);}
+50%{filter:brightness(1.5);}
+100%{filter:brightness(1);}
+
+}
+
+/* TREASURE */
 
 #treasure{
 
@@ -97,31 +133,25 @@ display:none;
 
 height:100vh;
 
-background:linear-gradient(
-135deg,
-#4B0F1B,
-#6A1B2B
-);
-
-color:#C2A45C;
-
 justify-content:center;
 align-items:center;
 flex-direction:column;
 
 text-align:center;
 
+color:#C2A45C;
+
 }
 
 /* TITLE */
 
-.treasureTitle{
+.title{
 
 font-family:'Great Vibes', cursive;
 
-font-size:42px;
+font-size:48px;
 
-margin-bottom:30px;
+margin-bottom:35px;
 
 }
 
@@ -129,19 +159,20 @@ margin-bottom:30px;
 
 .treasureBox{
 
-width:150px;
-height:150px;
+width:180px;
+height:180px;
 
-background:linear-gradient(
+background:
+linear-gradient(
 145deg,
 #E4C98A,
-#C2A45C
+#A67C00
 );
 
-border-radius:14px;
+border-radius:18px;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,0.4);
+0 20px 45px rgba(0,0,0,0.6);
 
 cursor:pointer;
 
@@ -151,7 +182,7 @@ transition:0.3s;
 
 .treasureBox:hover{
 
-transform:scale(1.05);
+transform:scale(1.06);
 
 }
 
@@ -165,24 +196,14 @@ margin-top:30px;
 
 background:white;
 
-padding:30px;
+padding:35px;
 
-border-radius:14px;
+border-radius:16px;
 
 border:2px solid #C2A45C;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,0.3);
-
-}
-
-/* TEXT */
-
-.passTitle{
-
-color:#4B0F1B;
-
-margin-bottom:15px;
+0 20px 45px rgba(0,0,0,0.4);
 
 }
 
@@ -192,7 +213,7 @@ margin-bottom:15px;
 
 padding:12px;
 
-border-radius:8px;
+border-radius:10px;
 
 border:1px solid #C2A45C;
 
@@ -200,13 +221,15 @@ text-align:center;
 
 margin-bottom:15px;
 
+font-size:16px;
+
 }
 
 /* BUTTON */
 
 .unlockBtn{
 
-padding:10px 25px;
+padding:10px 28px;
 
 border-radius:30px;
 
@@ -220,7 +243,7 @@ cursor:pointer;
 
 }
 
-/* ENVELOPE */
+/* ENVELOPE SECTION */
 
 #envelopeSection{
 
@@ -229,6 +252,8 @@ display:none;
 height:100vh;
 
 background:#F5F3EF;
+
+display:flex;
 
 justify-content:center;
 align-items:center;
@@ -240,17 +265,51 @@ flex-direction:column;
 
 .envelope{
 
-width:320px;
-height:200px;
+width:min(90vw,520px);
+height:min(55vw,320px);
 
-background:#4B0F1B;
+background:
+linear-gradient(
+145deg,
+#5A0F1F,
+#3B0813
+);
+
+border-radius:12px;
 
 position:relative;
 
-border-radius:8px;
-
 box-shadow:
-0 20px 40px rgba(0,0,0,0.3);
+0 30px 70px rgba(0,0,0,0.6);
+
+overflow:hidden;
+
+}
+
+/* FLAP */
+
+.envelope::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+width:100%;
+height:160px;
+
+background:
+linear-gradient(
+145deg,
+#7A1F2E,
+#4B0F1B
+);
+
+clip-path:
+polygon(0 0,100% 0,50% 100%);
+
+z-index:3;
 
 }
 
@@ -258,21 +317,31 @@ box-shadow:
 
 .seal{
 
-width:60px;
-height:60px;
+width:70px;
+height:70px;
 
-background:#7A1F2E;
+background:
+radial-gradient(
+circle,
+#E4C98A,
+#A67C00
+);
 
 border-radius:50%;
 
 position:absolute;
 
-top:70px;
+top:110px;
 left:50%;
 
 transform:translateX(-50%);
 
 cursor:pointer;
+
+box-shadow:
+0 0 20px rgba(255,215,0,0.7);
+
+z-index:5;
 
 }
 
@@ -280,38 +349,41 @@ cursor:pointer;
 
 .letter{
 
-display:none;
+width:min(90vw,540px);
 
-width:340px;
-
-margin-top:30px;
-
-background:linear-gradient(
+background:
+linear-gradient(
 145deg,
-#E4C98A,
-#D6B772
+#F2E6C9,
+#E4C98A
 );
 
-padding:35px;
+padding:40px;
 
-border-radius:8px;
+border-radius:10px;
 
 border:2px solid #C2A45C;
 
 box-shadow:
-0 20px 40px rgba(0,0,0,0.3);
+0 25px 60px rgba(0,0,0,0.4);
+
+position:absolute;
+
+top:-400px;
+
+opacity:0;
+
+transition:0.7s;
 
 }
 
-/* TITLE */
+/* SHOW LETTER */
 
-.letterTitle{
+.letter.show{
 
-text-align:center;
+top:280px;
 
-color:#4B0F1B;
-
-margin-bottom:15px;
+opacity:1;
 
 }
 
@@ -321,13 +393,35 @@ margin-bottom:15px;
 
 font-family:'Great Vibes', cursive;
 
-font-size:30px;
-
-color:#4B0F1B;
+font-size:34px;
 
 text-align:center;
 
+color:#4B0F1B;
+
 line-height:1.8;
+
+}
+
+/* FRAME */
+
+.frame{
+
+margin-top:25px;
+
+border:6px solid #C2A45C;
+
+padding:15px;
+
+border-radius:8px;
+
+background:white;
+
+text-align:center;
+
+color:#4B0F1B;
+
+font-weight:bold;
 
 }
 
@@ -359,7 +453,7 @@ Preparing your gift...
 
 <div id="treasure">
 
-<div class="treasureTitle">
+<div class="title">
 
 Your Treasure Awaits
 
@@ -416,12 +510,6 @@ onclick="openLetter()">
 
 id="letter">
 
-<div class="letterTitle">
-
-A Small Note
-
-</div>
-
 <div class="script">
 
 Happy Birthday Shafa,<br><br>
@@ -430,6 +518,12 @@ May Allah bless you<br>
 with happiness,<br>
 good health,<br>
 and beautiful moments ahead.
+
+</div>
+
+<div class="frame">
+
+Someone worth celebrating
 
 </div>
 
@@ -487,12 +581,12 @@ alert("Wrong password");
 
 }
 
-/* OPEN LETTER */
+/* LETTER DROP */
 
 function openLetter(){
 
 document.getElementById("letter")
-.style.display="block";
+.classList.add("show");
 
 }
 
