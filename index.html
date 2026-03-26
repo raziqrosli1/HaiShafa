@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gift Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Cinzel', serif;
+overflow:hidden;
+}
+
+/* ================= */
+/* LOADING */
+/* ================= */
+
+#loading{
+
+position:fixed;
+width:100%;
+height:100vh;
+
+background:#4B0F1B;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+color:#C2A45C;
+
+}
+
+.loading-text{
+
+margin-bottom:30px;
+letter-spacing:3px;
+
+}
+
+.bar{
+
+width:280px;
+height:6px;
+
+background:#6A1B2B;
+
+border-radius:10px;
+
+overflow:hidden;
+
+margin-top:20px;
+
+}
+
+.progress{
+
+height:100%;
+width:0%;
+
+background:linear-gradient(
+90deg,
+#C2A45C,
+#E4C98A
+);
+
+animation:load 9s forwards;
+
+box-shadow:0 0 15px #C2A45C;
+
+}
+
+@keyframes load{
+
+0%{width:0%;}
+100%{width:100%;}
+
+}
+
+/* ================= */
+/* LANDING */
+/* ================= */
+
+#landing{
+
+display:none;
+
+height:100vh;
+
+background:linear-gradient(
+135deg,
+#4B0F1B,
+#6A1B2B
+);
+
+color:#C2A45C;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.title{
+
+font-family:'Great Vibes', cursive;
+font-size:48px;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+letter-spacing:2px;
+
+margin-bottom:30px;
+
+max-width:300px;
+
+}
+
+.button{
+
+padding:14px 40px;
+
+border-radius:40px;
+
+border:1px solid #C2A45C;
+
+background:transparent;
+
+color:#C2A45C;
+
+cursor:pointer;
+
+transition:0.4s;
+
+}
+
+.button:hover{
+
+background:#C2A45C;
+color:#4B0F1B;
+
+box-shadow:
+0 0 20px #C2A45C;
+
+}
+
+/* ================= */
+/* GAME */
+/* ================= */
+
+#game{
+
+display:none;
+
+height:100vh;
+
+background:#4B0F1B;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+
+width:22px;
+height:22px;
+
+background:#E4C98A;
+
+transform:rotate(45deg);
+
+box-shadow:
+0 0 12px #E4C98A;
+
+}
+
+.heart:before,
+.heart:after{
+
+content:"";
+
+width:22px;
+height:22px;
+
+background:#E4C98A;
+
+border-radius:50%;
+
+position:absolute;
+
+}
+
+.heart:before{
+
+top:-11px;
+left:0;
+
+}
+
+.heart:after{
+
+left:-11px;
+top:0;
+
+}
+
+@keyframes fall{
+
+0%{top:-30px;}
+100%{top:100vh;}
+
+}
+
+.counter{
+
+position:absolute;
+
+top:20px;
+left:20px;
+
+color:#C2A45C;
+
+font-size:16px;
+
+}
+
+/* ================= */
+/* CELEBRATION */
+/* ================= */
+
+#celebration{
+
+display:none;
+
+height:100vh;
+
+background:#4B0F1B;
+
+color:#C2A45C;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+}
+
+/* ================= */
+/* ENVELOPE */
+/* ================= */
+
+#unlock{
+
+display:none;
+
+height:100vh;
+
+background:#F5F3EF;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+}
+
+.envelope{
+
+width:340px;
+height:220px;
+
+background:#4B0F1B;
+
+position:relative;
+
+border-radius:6px;
+
+cursor:pointer;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,0.3);
+
+}
+
+.seal{
+
+width:60px;
+height:60px;
+
+background:#7A1F2E;
+
+border-radius:50%;
+
+position:absolute;
+
+top:80px;
+left:140px;
+
+box-shadow:
+0 0 10px rgba(0,0,0,0.4);
+
+cursor:pointer;
+
+}
+
+.paper{
+
+display:none;
+
+width:300px;
+
+background:linear-gradient(
+145deg,
+#E4C98A,
+#D6B772
+);
+
+margin-top:30px;
+
+padding:30px;
+
+border-radius:6px;
+
+}
+
+.script{
+
+font-family:'Great Vibes', cursive;
+
+font-size:30px;
+
+color:#4B0F1B;
+
+text-align:center;
+
+line-height:1.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADING -->
+
+<div id="loading">
+
+<div class="loading-text">
+
+Preparing your gift...
+
+</div>
+
+<div class="bar">
+
+<div class="progress"></div>
+
+</div>
+
+</div>
+
+<!-- LANDING -->
+
+<div id="landing">
+
+<div class="title">
+
+Hi Shafa
+
+</div>
+
+<div class="subtitle">
+
+Before you open your gift,  
+complete a small challenge first.
+
+</div>
+
+<button class="button"
+
+onclick="startGame()">
+
+Start Challenge
+
+</button>
+
+</div>
+
+<!-- GAME -->
+
+<div id="game">
+
+<div class="counter"
+
+id="counter">
+
+0 / 13
+
+</div>
+
+</div>
+
+<!-- CELEBRATION -->
+
+<div id="celebration">
+
+<h2>
+
+Congratulations
+
+</h2>
+
+<p>
+
+You unlocked the next step.
+
+</p>
+
+<button class="button"
+
+onclick="goEnvelope()">
+
+Continue
+
+</button>
+
+</div>
+
+<!-- ENVELOPE -->
+
+<div id="unlock">
+
+<div class="envelope">
+
+<div class="seal"
+
+onclick="openLetter()">
+
+</div>
+
+</div>
+
+<div class="paper"
+
+id="paper">
+
+<div class="script">
+
+Happy Birthday,<br>
+
+May Allah bless you<br>
+with happiness,<br>
+peace,<br>
+and beautiful moments ahead.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* LOADING */
+
+setTimeout(function(){
+
+document.getElementById("loading").style.display="none";
+
+document.getElementById("landing").style.display="flex";
+
+},9000);
+
+/* GAME */
+
+let count=0;
+
+let target=13;
+
+function startGame(){
+
+document.getElementById("landing").style.display="none";
+
+document.getElementById("game").style.display="block";
+
+spawnMany();
+
+}
+
+function spawnMany(){
+
+for(let i=0;i<3;i++){
+
+spawnHeart();
+
+}
+
+}
+
+function spawnHeart(){
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*window.innerWidth+"px";
+
+heart.style.top="-30px";
+
+heart.style.animation="fall 3s linear";
+
+heart.onclick=function(){
+
+heart.remove();
+
+count++;
+
+document.getElementById("counter").innerHTML=
+
+count+" / "+target;
+
+if(count<target){
+
+spawnHeart();
+
+}
+
+else{
+
+celebrate();
+
+}
+
+};
+
+document.getElementById("game")
+
+.appendChild(heart);
+
+}
+
+function celebrate(){
+
+document.getElementById("game").style.display="none";
+
+document.getElementById("celebration").style.display="flex";
+
+}
+
+function goEnvelope(){
+
+document.getElementById("celebration").style.display="none";
+
+document.getElementById("unlock").style.display="flex";
+
+}
+
+function openLetter(){
+
+document.getElementById("paper").style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
