@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>Gift Experience</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -18,11 +21,13 @@ body{
 
 margin:0;
 
-font-family:'Cinzel', serif;
-
 background:#4B0F1B;
 
+font-family:'Cinzel', serif;
+
 overflow:hidden;
+
+color:#C2A45C;
 
 }
 
@@ -35,50 +40,22 @@ position:fixed;
 width:100%;
 height:100vh;
 
-background:
-linear-gradient(
-to bottom,
-#4B0F1B,
-#2B0610
-);
+background:#4B0F1B;
 
 display:flex;
 
-justify-content:center;
-align-items:center;
 flex-direction:column;
 
-color:#C2A45C;
+justify-content:center;
+
+align-items:center;
 
 }
-
-/* LOADING TEXT */
-
-.loading-text{
-
-letter-spacing:4px;
-
-margin-bottom:30px;
-
-font-size:16px;
-
-animation:fadeText 2s forwards;
-
-}
-
-@keyframes fadeText{
-
-0%{opacity:0;}
-100%{opacity:1;}
-
-}
-
-/* PROGRESS BAR */
 
 .bar{
 
 width:300px;
-height:7px;
+height:6px;
 
 background:#6A1B2B;
 
@@ -86,14 +63,14 @@ border-radius:10px;
 
 overflow:hidden;
 
-box-shadow:
-inset 0 0 8px rgba(0,0,0,0.5);
+margin-top:20px;
 
 }
 
 .progress{
 
 height:100%;
+
 width:0%;
 
 background:
@@ -104,9 +81,7 @@ linear-gradient(
 #C2A45C
 );
 
-animation:
-load 9s forwards,
-shine 2s infinite;
+animation:load 9s forwards;
 
 }
 
@@ -117,11 +92,62 @@ shine 2s infinite;
 
 }
 
-@keyframes shine{
+/* GAME */
 
-0%{filter:brightness(1);}
-50%{filter:brightness(1.5);}
-100%{filter:brightness(1);}
+#game{
+
+display:none;
+
+height:100vh;
+
+position:relative;
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:26px;
+
+cursor:pointer;
+
+animation:fall linear;
+
+}
+
+@keyframes fall{
+
+0%{
+top:-50px;
+}
+
+100%{
+top:100vh;
+}
+
+}
+
+.counter{
+
+position:absolute;
+
+top:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:white;
+
+color:#4B0F1B;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+border:2px solid #C2A45C;
+
+font-weight:bold;
 
 }
 
@@ -134,28 +160,12 @@ display:none;
 height:100vh;
 
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
 
-text-align:center;
-
-color:#C2A45C;
-
 }
-
-/* TITLE */
-
-.title{
-
-font-family:'Great Vibes', cursive;
-
-font-size:48px;
-
-margin-bottom:35px;
-
-}
-
-/* TREASURE BOX */
 
 .treasureBox{
 
@@ -169,24 +179,13 @@ linear-gradient(
 #A67C00
 );
 
-border-radius:18px;
-
-box-shadow:
-0 20px 45px rgba(0,0,0,0.6);
+border-radius:16px;
 
 cursor:pointer;
 
-transition:0.3s;
-
 }
 
-.treasureBox:hover{
-
-transform:scale(1.06);
-
-}
-
-/* PASSWORD CARD */
+/* PASSWORD */
 
 #passwordCard{
 
@@ -196,42 +195,33 @@ margin-top:30px;
 
 background:white;
 
-padding:35px;
+padding:30px;
 
-border-radius:16px;
+border-radius:14px;
 
 border:2px solid #C2A45C;
 
-box-shadow:
-0 20px 45px rgba(0,0,0,0.4);
-
 }
 
-/* INPUT */
-
-#passwordInput{
+input{
 
 padding:12px;
 
-border-radius:10px;
+border-radius:8px;
 
 border:1px solid #C2A45C;
 
+margin-bottom:10px;
+
 text-align:center;
-
-margin-bottom:15px;
-
-font-size:16px;
 
 }
 
-/* BUTTON */
+button{
 
-.unlockBtn{
+padding:10px 20px;
 
-padding:10px 28px;
-
-border-radius:30px;
+border-radius:20px;
 
 border:none;
 
@@ -243,7 +233,7 @@ cursor:pointer;
 
 }
 
-/* ENVELOPE SECTION */
+/* ENVELOPE */
 
 #envelopeSection{
 
@@ -256,31 +246,26 @@ background:#F5F3EF;
 display:flex;
 
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
 
 }
-
-/* ENVELOPE */
 
 .envelope{
 
 width:min(90vw,520px);
 height:min(55vw,320px);
 
-background:
-linear-gradient(
-145deg,
-#5A0F1F,
-#3B0813
-);
+background:#4B0F1B;
 
 border-radius:12px;
 
 position:relative;
 
 box-shadow:
-0 30px 70px rgba(0,0,0,0.6);
+0 30px 60px rgba(0,0,0,0.5);
 
 overflow:hidden;
 
@@ -288,9 +273,7 @@ overflow:hidden;
 
 /* FLAP */
 
-.envelope::before{
-
-content:"";
+.flap{
 
 position:absolute;
 
@@ -299,15 +282,12 @@ top:0;
 width:100%;
 height:160px;
 
-background:
-linear-gradient(
-145deg,
-#7A1F2E,
-#4B0F1B
-);
+background:#7A1F2E;
 
 clip-path:
 polygon(0 0,100% 0,50% 100%);
+
+transition:1s;
 
 z-index:3;
 
@@ -336,10 +316,19 @@ left:50%;
 
 transform:translateX(-50%);
 
-cursor:pointer;
+display:flex;
 
-box-shadow:
-0 0 20px rgba(255,215,0,0.7);
+justify-content:center;
+
+align-items:center;
+
+font-family:'Cinzel';
+
+font-weight:bold;
+
+color:white;
+
+cursor:pointer;
 
 z-index:5;
 
@@ -364,9 +353,6 @@ border-radius:10px;
 
 border:2px solid #C2A45C;
 
-box-shadow:
-0 25px 60px rgba(0,0,0,0.4);
-
 position:absolute;
 
 top:-400px;
@@ -377,17 +363,13 @@ transition:0.7s;
 
 }
 
-/* SHOW LETTER */
-
 .letter.show{
 
-top:280px;
+top:260px;
 
 opacity:1;
 
 }
-
-/* SCRIPT */
 
 .script{
 
@@ -403,28 +385,6 @@ line-height:1.8;
 
 }
 
-/* FRAME */
-
-.frame{
-
-margin-top:25px;
-
-border:6px solid #C2A45C;
-
-padding:15px;
-
-border-radius:8px;
-
-background:white;
-
-text-align:center;
-
-color:#4B0F1B;
-
-font-weight:bold;
-
-}
-
 </style>
 
 </head>
@@ -435,11 +395,7 @@ font-weight:bold;
 
 <div id="loading">
 
-<div class="loading-text">
-
 Preparing your gift...
-
-</div>
 
 <div class="bar">
 
@@ -449,15 +405,23 @@ Preparing your gift...
 
 </div>
 
+<!-- GAME -->
+
+<div id="game">
+
+<div class="counter"
+
+id="counter">
+
+❤️ 0/15
+
+</div>
+
+</div>
+
 <!-- TREASURE -->
 
 <div id="treasure">
-
-<div class="title">
-
-Your Treasure Awaits
-
-</div>
 
 <div class="treasureBox"
 
@@ -467,24 +431,15 @@ onclick="showPassword()">
 
 <div id="passwordCard">
 
-<div class="passTitle">
+Enter Password<br><br>
 
-Enter Password
-
-</div>
-
-<input 
-type="text"
-id="passwordInput"
-placeholder="Enter number">
+<input id="passwordInput">
 
 <br>
 
-<button class="unlockBtn"
+<button onclick="checkPassword()">
 
-onclick="checkPassword()">
-
-Unlock Treasure
+Unlock
 
 </button>
 
@@ -498,9 +453,14 @@ Unlock Treasure
 
 <div class="envelope">
 
+<div class="flap"
+id="flap"></div>
+
 <div class="seal"
 
 onclick="openLetter()">
+
+S
 
 </div>
 
@@ -514,16 +474,10 @@ id="letter">
 
 Happy Birthday Shafa,<br><br>
 
-May Allah bless you<br>
-with happiness,<br>
-good health,<br>
-and beautiful moments ahead.
-
-</div>
-
-<div class="frame">
-
-Someone worth celebrating
+May Allah bless your days  
+with happiness,  
+good health,  
+and beautiful memories ahead.
 
 </div>
 
@@ -540,12 +494,75 @@ setTimeout(()=>{
 document.getElementById("loading")
 .style.display="none";
 
-document.getElementById("treasure")
-.style.display="flex";
+startGame();
 
 },9000);
 
-/* SHOW PASSWORD */
+/* GAME */
+
+let collected=0;
+
+function startGame(){
+
+document.getElementById("game")
+.style.display="block";
+
+spawnHeart();
+
+}
+
+function spawnHeart(){
+
+let heart=
+document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=
+Math.random()*90+"vw";
+
+heart.style.animationDuration=
+(3+Math.random()*3)+"s";
+
+heart.onclick=function(){
+
+collected++;
+
+heart.remove();
+
+document.getElementById(
+"counter"
+).innerHTML=
+"❤️ "+collected+"/15";
+
+if(collected>=15){
+
+endGame();
+
+}
+
+};
+
+document.getElementById("game")
+.appendChild(heart);
+
+setTimeout(spawnHeart,700);
+
+}
+
+function endGame(){
+
+document.getElementById("game")
+.style.display="none";
+
+document.getElementById("treasure")
+.style.display="flex";
+
+}
+
+/* PASSWORD */
 
 function showPassword(){
 
@@ -554,9 +571,7 @@ document.getElementById("passwordCard")
 
 }
 
-/* PASSWORD */
-
-let correctPassword="15";
+let correctPassword="6";
 
 function checkPassword(){
 
@@ -581,12 +596,19 @@ alert("Wrong password");
 
 }
 
-/* LETTER DROP */
+/* ENVELOPE OPEN */
 
 function openLetter(){
 
+document.getElementById("flap")
+.style.transform="rotateX(180deg)";
+
+setTimeout(()=>{
+
 document.getElementById("letter")
 .classList.add("show");
+
+},500);
 
 }
 
