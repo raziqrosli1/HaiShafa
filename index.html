@@ -8,384 +8,13 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Gift Experience</title>
+<title>Special Gift</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500&display=swap"
 rel="stylesheet">
 
-<style>
-
-/* BODY */
-
-body{
-
-margin:0;
-
-background:#4B0F1B;
-
-font-family:'Cinzel', serif;
-
-overflow:hidden;
-
-color:#C2A45C;
-
-}
-
-/* LOADING */
-
-#loading{
-
-position:fixed;
-
-width:100%;
-height:100vh;
-
-background:#4B0F1B;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-.bar{
-
-width:300px;
-height:6px;
-
-background:#6A1B2B;
-
-border-radius:10px;
-
-overflow:hidden;
-
-margin-top:20px;
-
-}
-
-.progress{
-
-height:100%;
-
-width:0%;
-
-background:
-linear-gradient(
-90deg,
-#E4C98A,
-#FFF3C4,
-#C2A45C
-);
-
-animation:load 9s forwards;
-
-}
-
-@keyframes load{
-
-0%{width:0%;}
-100%{width:100%;}
-
-}
-
-/* GAME */
-
-#game{
-
-display:none;
-
-height:100vh;
-
-position:relative;
-
-}
-
-.heart{
-
-position:absolute;
-
-font-size:26px;
-
-cursor:pointer;
-
-animation:fall linear;
-
-}
-
-@keyframes fall{
-
-0%{
-top:-50px;
-}
-
-100%{
-top:100vh;
-}
-
-}
-
-.counter{
-
-position:absolute;
-
-top:20px;
-left:50%;
-
-transform:translateX(-50%);
-
-background:white;
-
-color:#4B0F1B;
-
-padding:12px 20px;
-
-border-radius:12px;
-
-border:2px solid #C2A45C;
-
-font-weight:bold;
-
-}
-
-/* TREASURE */
-
-#treasure{
-
-display:none;
-
-height:100vh;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-}
-
-.treasureBox{
-
-width:180px;
-height:180px;
-
-background:
-linear-gradient(
-145deg,
-#E4C98A,
-#A67C00
-);
-
-border-radius:16px;
-
-cursor:pointer;
-
-}
-
-/* PASSWORD */
-
-#passwordCard{
-
-display:none;
-
-margin-top:30px;
-
-background:white;
-
-padding:30px;
-
-border-radius:14px;
-
-border:2px solid #C2A45C;
-
-}
-
-input{
-
-padding:12px;
-
-border-radius:8px;
-
-border:1px solid #C2A45C;
-
-margin-bottom:10px;
-
-text-align:center;
-
-}
-
-button{
-
-padding:10px 20px;
-
-border-radius:20px;
-
-border:none;
-
-background:#4B0F1B;
-
-color:#C2A45C;
-
-cursor:pointer;
-
-}
-
-/* ENVELOPE */
-
-#envelopeSection{
-
-display:none;
-
-height:100vh;
-
-background:#F5F3EF;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-}
-
-.envelope{
-
-width:min(90vw,520px);
-height:min(55vw,320px);
-
-background:#4B0F1B;
-
-border-radius:12px;
-
-position:relative;
-
-box-shadow:
-0 30px 60px rgba(0,0,0,0.5);
-
-overflow:hidden;
-
-}
-
-/* FLAP */
-
-.flap{
-
-position:absolute;
-
-top:0;
-
-width:100%;
-height:160px;
-
-background:#7A1F2E;
-
-clip-path:
-polygon(0 0,100% 0,50% 100%);
-
-transition:1s;
-
-z-index:3;
-
-}
-
-/* SEAL */
-
-.seal{
-
-width:70px;
-height:70px;
-
-background:
-radial-gradient(
-circle,
-#E4C98A,
-#A67C00
-);
-
-border-radius:50%;
-
-position:absolute;
-
-top:110px;
-left:50%;
-
-transform:translateX(-50%);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-family:'Cinzel';
-
-font-weight:bold;
-
-color:white;
-
-cursor:pointer;
-
-z-index:5;
-
-}
-
-/* LETTER */
-
-.letter{
-
-width:min(90vw,540px);
-
-background:
-linear-gradient(
-145deg,
-#F2E6C9,
-#E4C98A
-);
-
-padding:40px;
-
-border-radius:10px;
-
-border:2px solid #C2A45C;
-
-position:absolute;
-
-top:-400px;
-
-opacity:0;
-
-transition:0.7s;
-
-}
-
-.letter.show{
-
-top:260px;
-
-opacity:1;
-
-}
-
-.script{
-
-font-family:'Great Vibes', cursive;
-
-font-size:34px;
-
-text-align:center;
-
-color:#4B0F1B;
-
-line-height:1.8;
-
-}
-
-</style>
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
@@ -393,53 +22,177 @@ line-height:1.8;
 
 <!-- LOADING -->
 
-<div id="loading">
+<section id="loadingSection">
 
-Preparing your gift...
+<div class="loadingWrapper">
 
-<div class="bar">
+<div class="loader"></div>
 
-<div class="progress"></div>
+<p class="loadingText">
+
+Preparing your surprise...
+
+</p>
 
 </div>
 
+</section>
+
+<!-- INTRO -->
+
+<section id="introSection">
+
+<div class="introBox">
+
+<h1>
+Hi Shafa
+</h1>
+
+<p>
+
+Before opening your gift,
+complete this small mission.
+
+</p>
+
+<button id="startBtn">
+
+Start Mission
+
+</button>
+
 </div>
+
+</section>
 
 <!-- GAME -->
 
-<div id="game">
+<section id="gameSection">
 
-<div class="counter"
+<div class="counterBox">
 
-id="counter">
-
-❤️ 0/15
+❤️ <span id="heartCount">0</span>/18
 
 </div>
 
+<div id="gameArea"></div>
+
+</section>
+
+<!-- CELEBRATION -->
+
+<section id="celebrationSection">
+
+<div class="celebrationBox">
+
+<h1>
+Congratulations
+</h1>
+
+<p>
+Mission Completed Successfully
+</p>
+
+<button id="nextClueBtn">
+
+Continue Journey
+
+</button>
+
 </div>
 
-<!-- TREASURE -->
+<div id="flowerContainer"></div>
 
-<div id="treasure">
+</section>
 
-<div class="treasureBox"
+<!-- CLUE -->
 
-onclick="showPassword()">
+<section id="clueSection">
+
+<div class="clueBox">
+
+<h2>
+Solve These Clues
+</h2>
+
+<ul>
+
+<li>
+Sum of collected hearts digits
+</li>
+
+<li>
+Number shown on QR card
+</li>
+
+<li>
+Number of keychains received
+</li>
+
+<li>
+Birth month (April)
+</li>
+
+</ul>
+
+<button id="goPasscodeBtn">
+
+Enter Passcode
+
+</button>
 
 </div>
 
-<div id="passwordCard">
+</section>
 
-Enter Password<br><br>
+<!-- PASSCODE -->
 
-<input id="passwordInput">
+<section id="passcodeSection">
 
-<br>
+<div class="passcodeBox">
 
-<button onclick="checkPassword()">
+<h2>
+Unlock Treasure
+</h2>
 
-Unlock
+<!-- PASSCODE DISPLAY -->
+
+<div id="dots">
+
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+
+</div>
+
+<!-- KEYPAD -->
+
+<div class="keypad">
+
+<button class="key">1</button>
+<button class="key">2</button>
+<button class="key">3</button>
+
+<button class="key">4</button>
+<button class="key">5</button>
+<button class="key">6</button>
+
+<button class="key">7</button>
+<button class="key">8</button>
+<button class="key">9</button>
+
+<!-- DELETE BUTTON -->
+
+<button class="key deleteKey">
+
+⌫
+
+</button>
+
+<button class="key">0</button>
+
+<button class="key emptyKey">
 
 </button>
 
@@ -447,18 +200,17 @@ Unlock
 
 </div>
 
+</section>
+
 <!-- ENVELOPE -->
 
-<div id="envelopeSection">
+<section id="envelopeSection">
 
-<div class="envelope">
+<div class="envelopeBox">
 
-<div class="flap"
-id="flap"></div>
+<div class="flap"></div>
 
-<div class="seal"
-
-onclick="openLetter()">
+<div class="seal">
 
 S
 
@@ -466,153 +218,50 @@ S
 
 </div>
 
-<div class="letter"
+</section>
 
-id="letter">
+<!-- REVEAL COUNTDOWN -->
 
-<div class="script">
+<section id="revealSection">
 
-Happy Birthday Shafa,<br><br>
+<div class="revealContainer">
+
+<h1 id="revealText">
+
+3
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- LETTER -->
+
+<section id="letterSection">
+
+<div class="letterBox">
+
+<h1>
+
+Happy Birthday Shafa
+
+</h1>
+
+<p>
 
 May Allah bless your days  
 with happiness,  
 good health,  
 and beautiful memories ahead.
 
-</div>
+</p>
 
 </div>
 
-</div>
+</section>
 
-<script>
-
-/* LOADING */
-
-setTimeout(()=>{
-
-document.getElementById("loading")
-.style.display="none";
-
-startGame();
-
-},9000);
-
-/* GAME */
-
-let collected=0;
-
-function startGame(){
-
-document.getElementById("game")
-.style.display="block";
-
-spawnHeart();
-
-}
-
-function spawnHeart(){
-
-let heart=
-document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-heart.style.left=
-Math.random()*90+"vw";
-
-heart.style.animationDuration=
-(3+Math.random()*3)+"s";
-
-heart.onclick=function(){
-
-collected++;
-
-heart.remove();
-
-document.getElementById(
-"counter"
-).innerHTML=
-"❤️ "+collected+"/15";
-
-if(collected>=15){
-
-endGame();
-
-}
-
-};
-
-document.getElementById("game")
-.appendChild(heart);
-
-setTimeout(spawnHeart,700);
-
-}
-
-function endGame(){
-
-document.getElementById("game")
-.style.display="none";
-
-document.getElementById("treasure")
-.style.display="flex";
-
-}
-
-/* PASSWORD */
-
-function showPassword(){
-
-document.getElementById("passwordCard")
-.style.display="block";
-
-}
-
-let correctPassword="6";
-
-function checkPassword(){
-
-let input=
-document.getElementById("passwordInput").value;
-
-if(input===correctPassword){
-
-document.getElementById("treasure")
-.style.display="none";
-
-document.getElementById("envelopeSection")
-.style.display="flex";
-
-}
-
-else{
-
-alert("Wrong password");
-
-}
-
-}
-
-/* ENVELOPE OPEN */
-
-function openLetter(){
-
-document.getElementById("flap")
-.style.transform="rotateX(180deg)";
-
-setTimeout(()=>{
-
-document.getElementById("letter")
-.classList.add("show");
-
-},500);
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 
