@@ -89,21 +89,17 @@ border-top:4px solid gold;
 animation:spin 1.4s linear infinite;
 
 box-shadow:
-0 0 25px gold,
-0 0 50px rgba(255,215,0,0.4);
+0 0 25px gold;
 
 }
 
 .loadingText{
 
-font-size:18px;
+font-size:16px;
 
 letter-spacing:2px;
 
 color:#FFD700;
-
-text-shadow:
-0 0 10px gold;
 
 }
 
@@ -127,19 +123,17 @@ linear-gradient(
 #3A0713
 );
 
-padding:50px 70px;
+padding:45px 30px;
 
 border-radius:22px;
 
 text-align:center;
 
 box-shadow:
-0 30px 70px rgba(0,0,0,0.7),
 0 0 40px rgba(255,215,0,0.25);
 
 max-width:420px;
-
-animation:fadeUp 0.7s ease;
+width:100%;
 
 }
 
@@ -147,24 +141,21 @@ animation:fadeUp 0.7s ease;
 
 font-family:'Great Vibes';
 
-font-size:60px;
+font-size:52px;
 
 color:#FFD700;
 
-margin-bottom:18px;
-
-text-shadow:
-0 0 20px gold;
+margin-bottom:15px;
 
 }
 
 .introBox p{
 
-font-size:16px;
+font-size:15px;
 
 color:#E4C98A;
 
-margin-bottom:28px;
+margin-bottom:25px;
 
 line-height:1.6;
 
@@ -176,9 +167,9 @@ line-height:1.6;
 
 button{
 
-padding:14px 34px;
+padding:14px 32px;
 
-border-radius:30px;
+border-radius:28px;
 
 border:none;
 
@@ -198,18 +189,13 @@ color:#4B0F1B;
 box-shadow:
 0 0 14px gold;
 
-transition:0.3s;
-
-margin-top:8px;
+transition:0.25s;
 
 }
 
 button:hover{
 
-transform:scale(1.08);
-
-box-shadow:
-0 0 28px gold;
+transform:scale(1.05);
 
 }
 
@@ -236,16 +222,13 @@ linear-gradient(
 
 color:#4B0F1B;
 
-padding:12px 26px;
+padding:10px 24px;
 
-border-radius:16px;
+border-radius:14px;
 
 border:2px solid #C2A45C;
 
 font-weight:bold;
-
-box-shadow:
-0 0 15px rgba(255,215,0,0.4);
 
 }
 
@@ -253,7 +236,7 @@ box-shadow:
 
 position:absolute;
 
-font-size:30px;
+font-size:28px;
 
 cursor:pointer;
 
@@ -286,9 +269,9 @@ linear-gradient(
 #E8D7A8
 );
 
-padding:70px 80px;
+padding:50px 30px;
 
-border-radius:26px;
+border-radius:24px;
 
 border:2px solid #C2A45C;
 
@@ -296,13 +279,8 @@ color:#4B0F1B;
 
 text-align:center;
 
-box-shadow:
-0 30px 80px rgba(0,0,0,0.45),
-0 0 50px rgba(255,215,0,0.3);
-
-max-width:480px;
-
-animation:fadeUp 0.7s ease;
+max-width:420px;
+width:100%;
 
 }
 
@@ -310,30 +288,17 @@ animation:fadeUp 0.7s ease;
 
 font-family:'Great Vibes';
 
-font-size:58px;
+font-size:50px;
 
-color:#7A1F2E;
-
-text-align:center;
-
-margin-bottom:18px;
-
-text-shadow:
-0 0 12px rgba(255,215,0,0.6);
+margin-bottom:12px;
 
 }
 
 .celebrationBox p{
 
-text-align:center;
+font-size:15px;
 
-font-size:17px;
-
-margin-bottom:30px;
-
-color:#6b2b38;
-
-line-height:1.6;
+margin-bottom:25px;
 
 }
 
@@ -350,21 +315,16 @@ linear-gradient(
 #E8D7A8
 );
 
-padding:65px 70px;
+padding:45px 30px;
 
-border-radius:26px;
+border-radius:24px;
 
 border:2px solid #C2A45C;
 
 color:#4B0F1B;
 
-box-shadow:
-0 30px 80px rgba(0,0,0,0.45),
-0 0 40px rgba(255,215,0,0.25);
-
-max-width:460px;
-
-text-align:left;
+max-width:420px;
+width:100%;
 
 }
 
@@ -372,30 +332,34 @@ text-align:left;
 
 font-family:'Great Vibes';
 
-font-size:52px;
-
-color:#7A1F2E;
+font-size:46px;
 
 text-align:center;
 
-margin-bottom:30px;
-
-text-shadow:
-0 0 12px rgba(255,215,0,0.6);
+margin-bottom:25px;
 
 }
 
 .clueBox li{
 
-margin-bottom:18px;
+margin-bottom:16px;
 
-padding-left:30px;
+padding-left:25px;
 
 position:relative;
 
-font-size:16px;
+font-size:15px;
 
-line-height:1.7;
+line-height:1.6;
+
+}
+
+
+.clueBox ul{
+
+list-style:none;
+
+padding-left:0;
 
 }
 
@@ -409,15 +373,14 @@ left:0;
 
 color:#C2A45C;
 
-font-size:14px;
+font-size:12px;
 
 }
 
 #goPasscodeBtn{
 
 display:block;
-
-margin:30px auto 0 auto;
+margin:25px auto 0;
 
 }
 
@@ -434,126 +397,49 @@ linear-gradient(
 #E8D7A8
 );
 
-padding:55px;
-border-radius:26px;
+padding:40px 30px;
+
+border-radius:24px;
 
 border:2px solid #C2A45C;
-
-box-shadow:
-0 0 35px rgba(255,215,0,0.3);
-
-color:#4B0F1B;
 
 text-align:center;
 
+max-width:420px;
+width:100%;
+
 }
 
-/* DISPLAY */
-
-#dots{
+.passInputWrapper{
 
 display:flex;
-
 justify-content:center;
 
-gap:12px;
-
-margin-bottom:25px;
+margin:25px 0;
 
 }
 
-.dot{
+#passInput{
 
-width:45px;
-height:55px;
+width:180px;
 
-border-radius:10px;
+height:60px;
 
-background:#fff4cc;
+font-size:22px;
+
+text-align:center;
+
+border-radius:12px;
 
 border:2px solid #C2A45C;
 
-display:flex;
+background:#fff8e6;
 
-justify-content:center;
-align-items:center;
+letter-spacing:4px;
 
-font-size:24px;
+outline:none;
 
 font-weight:bold;
-
-color:#4B0F1B;
-
-box-shadow:
-0 0 10px rgba(255,215,0,0.4);
-
-}
-
-/* KEYPAD */
-
-.keypad{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,80px);
-
-gap:16px;
-
-justify-content:center;
-
-}
-
-.key{
-
-width:80px;
-height:80px;
-
-border-radius:50%;
-
-font-size:24px;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-background:
-linear-gradient(
-145deg,
-#FFD700,
-#C2A45C
-);
-
-border:none;
-
-color:#4B0F1B;
-
-cursor:pointer;
-
-box-shadow:
-0 0 14px gold;
-
-}
-
-/* DELETE */
-
-.deleteKey{
-
-background:
-linear-gradient(
-145deg,
-#A83232,
-#5C0F0F
-);
-
-color:white;
-
-}
-
-.emptyKey{
-
-visibility:hidden;
 
 }
 
@@ -563,8 +449,8 @@ visibility:hidden;
 
 .envelopeBox{
 
-width:350px;
-height:220px;
+width:280px;
+height:180px;
 
 background:
 linear-gradient(
@@ -577,10 +463,6 @@ border-radius:16px;
 
 position:relative;
 
-box-shadow:
-0 25px 70px rgba(0,0,0,0.6),
-0 0 30px rgba(255,215,0,0.2);
-
 }
 
 .flap{
@@ -588,7 +470,7 @@ box-shadow:
 position:absolute;
 
 width:100%;
-height:120px;
+height:100px;
 
 background:#7A1F2E;
 
@@ -601,8 +483,8 @@ transition:1s;
 
 .seal{
 
-width:70px;
-height:70px;
+width:60px;
+height:60px;
 
 background:
 radial-gradient(
@@ -615,7 +497,7 @@ border-radius:50%;
 
 position:absolute;
 
-top:75px;
+top:60px;
 
 left:50%;
 
@@ -628,33 +510,33 @@ justify-content:center;
 
 font-weight:bold;
 
-font-size:24px;
+font-size:22px;
 
 color:white;
 
 cursor:pointer;
 
-box-shadow:
-0 0 25px gold;
-
 }
 
 /* ================= */
-/* REVEAL */
+/* COUNTDOWN */
 /* ================= */
 
 #revealSection{
 
-display:none;
-
-justify-content:center;
-align-items:center;
+background:
+linear-gradient(
+180deg,
+#4B0F1B,
+#2B0610,
+#1A0308
+);
 
 }
 
 #revealText{
 
-font-size:70px;
+font-size:80px;
 
 font-family:'Cinzel';
 
@@ -663,19 +545,54 @@ color:#FFD700;
 text-shadow:
 0 0 20px gold;
 
-opacity:0;
+}
 
-transform:scale(0.8);
+/* ================= */
+/* FIREWORK */
+/* ================= */
 
-transition:0.5s;
+.firework{
+
+position:fixed;
+
+width:8px;
+height:8px;
+
+background:gold;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 10px gold,
+0 0 20px gold,
+0 0 40px #FFD700;
+
+animation:explode 1.2s ease-out;
+
+pointer-events:none;
+
+z-index:1;
 
 }
 
-#revealText.show{
+@keyframes explode{
+
+0%{
+
+transform:scale(0.2);
 
 opacity:1;
 
-transform:scale(1);
+}
+
+100%{
+
+transform:scale(4);
+
+opacity:0;
+
+}
 
 }
 
@@ -685,6 +602,10 @@ transform:scale(1);
 
 .letterBox{
 
+position:relative;
+
+z-index:10;
+
 background:
 linear-gradient(
 145deg,
@@ -692,7 +613,7 @@ linear-gradient(
 #E8D7A8
 );
 
-padding:50px;
+padding:40px 28px;
 
 border-radius:22px;
 
@@ -700,10 +621,8 @@ border:2px solid #C2A45C;
 
 text-align:center;
 
-box-shadow:
-0 0 45px rgba(255,215,0,0.4);
-
 max-width:420px;
+width:100%;
 
 }
 
@@ -711,83 +630,73 @@ max-width:420px;
 
 font-family:'Great Vibes';
 
-font-size:48px;
+font-size:42px;
 
-margin-bottom:20px;
+margin-bottom:18px;
+
+color:#4B0F1B;
+
+}
+
+.letterBox p{
+
+font-size:15px;
+
+line-height:1.6;
 
 color:#4B0F1B;
 
 }
 
 /* ================= */
-/* ANIMATION */
+/* CREDIT */
 /* ================= */
 
-@keyframes fadeUp{
+.creditText{
 
-from{
+position:fixed;
 
-opacity:0;
-transform:translateY(40px);
+bottom:6px;
 
-}
+left:50%;
 
-to{
+transform:translateX(-50%);
 
-opacity:1;
-transform:translateY(0);
+font-size:10px;
 
-}
+color:#C2A45C;
+
+opacity:0.45;
+
+letter-spacing:1px;
+
+pointer-events:none;
+
+z-index:999;
 
 }
 
 /* ================= */
-/* MARRON DIGITAL RAIN */
+/* MOBILE FIX */
 /* ================= */
 
-.rainLine{
+@media(max-width:500px){
 
-position:absolute;
+#revealText{
 
-top:-120px;
-
-width:2px;
-height:80px;
-
-/* marron gradient */
-
-background:linear-gradient(
-to bottom,
-#7A1F2E,
-#5A1220,
-transparent
-);
-
-opacity:0.8;
-
-filter:blur(0.2px);
-
-animation:rainFall linear;
+font-size:60px;
 
 }
 
-/* smooth jatuh */
+.introBox h1{
 
-@keyframes rainFall{
-
-0%{
-
-transform:translateY(0);
-
-opacity:0.9;
+font-size:44px;
 
 }
 
-100%{
+.clueBox h2{
 
-transform:translateY(120vh);
-
-opacity:0;
+font-size:40px;
 
 }
 
