@@ -1,0 +1,794 @@
+/* ================= */
+/* RESET */
+/* ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Cinzel', serif;
+
+height:100vh;
+
+background:
+linear-gradient(
+180deg,
+#4B0F1B,
+#2B0610,
+#1A0308
+);
+
+overflow:hidden;
+
+color:#C2A45C;
+
+}
+
+/* ================= */
+/* SECTION BASE */
+/* ================= */
+
+section{
+
+display:none;
+
+height:100vh;
+width:100%;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+position:absolute;
+
+top:0;
+left:0;
+
+padding:20px;
+
+}
+
+/* ================= */
+/* LOADING */
+/* ================= */
+
+#loadingSection{
+
+display:flex;
+
+}
+
+.loadingWrapper{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.loader{
+
+width:85px;
+height:85px;
+
+border-radius:50%;
+
+border:4px solid rgba(255,215,0,0.2);
+
+border-top:4px solid gold;
+
+animation:spin 1.4s linear infinite;
+
+box-shadow:
+0 0 25px gold,
+0 0 50px rgba(255,215,0,0.4);
+
+}
+
+.loadingText{
+
+font-size:18px;
+
+letter-spacing:2px;
+
+color:#FFD700;
+
+text-shadow:
+0 0 10px gold;
+
+}
+
+@keyframes spin{
+
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+
+}
+
+/* ================= */
+/* INTRO */
+/* ================= */
+
+.introBox{
+
+background:
+linear-gradient(
+145deg,
+#5A1220,
+#3A0713
+);
+
+padding:50px 70px;
+
+border-radius:22px;
+
+text-align:center;
+
+box-shadow:
+0 30px 70px rgba(0,0,0,0.7),
+0 0 40px rgba(255,215,0,0.25);
+
+max-width:420px;
+
+animation:fadeUp 0.7s ease;
+
+}
+
+.introBox h1{
+
+font-family:'Great Vibes';
+
+font-size:60px;
+
+color:#FFD700;
+
+margin-bottom:18px;
+
+text-shadow:
+0 0 20px gold;
+
+}
+
+.introBox p{
+
+font-size:16px;
+
+color:#E4C98A;
+
+margin-bottom:28px;
+
+line-height:1.6;
+
+}
+
+/* ================= */
+/* BUTTON */
+/* ================= */
+
+button{
+
+padding:14px 34px;
+
+border-radius:30px;
+
+border:none;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+145deg,
+#FFD700,
+#A67C00
+);
+
+color:#4B0F1B;
+
+box-shadow:
+0 0 14px gold;
+
+transition:0.3s;
+
+margin-top:8px;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 28px gold;
+
+}
+
+/* ================= */
+/* GAME */
+/* ================= */
+
+.counterBox{
+
+position:absolute;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:
+linear-gradient(
+145deg,
+#F2E6C9,
+#E8D7A8
+);
+
+color:#4B0F1B;
+
+padding:12px 26px;
+
+border-radius:16px;
+
+border:2px solid #C2A45C;
+
+font-weight:bold;
+
+box-shadow:
+0 0 15px rgba(255,215,0,0.4);
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+cursor:pointer;
+
+animation:fall linear;
+
+}
+
+@keyframes fall{
+
+0%{
+top:-40px;
+}
+
+100%{
+top:100vh;
+}
+
+}
+
+/* ================= */
+/* CELEBRATION */
+/* ================= */
+
+.celebrationBox{
+
+background:
+linear-gradient(
+145deg,
+#F2E6C9,
+#E8D7A8
+);
+
+padding:70px 80px;
+
+border-radius:26px;
+
+border:2px solid #C2A45C;
+
+color:#4B0F1B;
+
+text-align:center;
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.45),
+0 0 50px rgba(255,215,0,0.3);
+
+max-width:480px;
+
+animation:fadeUp 0.7s ease;
+
+}
+
+.celebrationBox h1{
+
+font-family:'Great Vibes';
+
+font-size:58px;
+
+color:#7A1F2E;
+
+text-align:center;
+
+margin-bottom:18px;
+
+text-shadow:
+0 0 12px rgba(255,215,0,0.6);
+
+}
+
+.celebrationBox p{
+
+text-align:center;
+
+font-size:17px;
+
+margin-bottom:30px;
+
+color:#6b2b38;
+
+line-height:1.6;
+
+}
+
+/* ================= */
+/* CLUE */
+/* ================= */
+
+.clueBox{
+
+background:
+linear-gradient(
+145deg,
+#F2E6C9,
+#E8D7A8
+);
+
+padding:65px 70px;
+
+border-radius:26px;
+
+border:2px solid #C2A45C;
+
+color:#4B0F1B;
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.45),
+0 0 40px rgba(255,215,0,0.25);
+
+max-width:460px;
+
+text-align:left;
+
+}
+
+.clueBox h2{
+
+font-family:'Great Vibes';
+
+font-size:52px;
+
+color:#7A1F2E;
+
+text-align:center;
+
+margin-bottom:30px;
+
+text-shadow:
+0 0 12px rgba(255,215,0,0.6);
+
+}
+
+.clueBox li{
+
+margin-bottom:18px;
+
+padding-left:30px;
+
+position:relative;
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+.clueBox li::before{
+
+content:"●";
+
+position:absolute;
+
+left:0;
+
+color:#C2A45C;
+
+font-size:14px;
+
+}
+
+#goPasscodeBtn{
+
+display:block;
+
+margin:30px auto 0 auto;
+
+}
+
+/* ================= */
+/* PASSCODE */
+/* ================= */
+
+.passcodeBox{
+
+background:
+linear-gradient(
+145deg,
+#F2E6C9,
+#E8D7A8
+);
+
+padding:55px;
+border-radius:26px;
+
+border:2px solid #C2A45C;
+
+box-shadow:
+0 0 35px rgba(255,215,0,0.3);
+
+color:#4B0F1B;
+
+text-align:center;
+
+}
+
+/* DISPLAY */
+
+#dots{
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+margin-bottom:25px;
+
+}
+
+.dot{
+
+width:45px;
+height:55px;
+
+border-radius:10px;
+
+background:#fff4cc;
+
+border:2px solid #C2A45C;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#4B0F1B;
+
+box-shadow:
+0 0 10px rgba(255,215,0,0.4);
+
+}
+
+/* KEYPAD */
+
+.keypad{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,80px);
+
+gap:16px;
+
+justify-content:center;
+
+}
+
+.key{
+
+width:80px;
+height:80px;
+
+border-radius:50%;
+
+font-size:24px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+145deg,
+#FFD700,
+#C2A45C
+);
+
+border:none;
+
+color:#4B0F1B;
+
+cursor:pointer;
+
+box-shadow:
+0 0 14px gold;
+
+}
+
+/* DELETE */
+
+.deleteKey{
+
+background:
+linear-gradient(
+145deg,
+#A83232,
+#5C0F0F
+);
+
+color:white;
+
+}
+
+.emptyKey{
+
+visibility:hidden;
+
+}
+
+/* ================= */
+/* ENVELOPE */
+/* ================= */
+
+.envelopeBox{
+
+width:350px;
+height:220px;
+
+background:
+linear-gradient(
+145deg,
+#5A1220,
+#3A0713
+);
+
+border-radius:16px;
+
+position:relative;
+
+box-shadow:
+0 25px 70px rgba(0,0,0,0.6),
+0 0 30px rgba(255,215,0,0.2);
+
+}
+
+.flap{
+
+position:absolute;
+
+width:100%;
+height:120px;
+
+background:#7A1F2E;
+
+clip-path:
+polygon(0 0,100% 0,50% 100%);
+
+transition:1s;
+
+}
+
+.seal{
+
+width:70px;
+height:70px;
+
+background:
+radial-gradient(
+circle,
+#E4C98A,
+#A67C00
+);
+
+border-radius:50%;
+
+position:absolute;
+
+top:75px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-weight:bold;
+
+font-size:24px;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:
+0 0 25px gold;
+
+}
+
+/* ================= */
+/* REVEAL */
+/* ================= */
+
+#revealSection{
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+}
+
+#revealText{
+
+font-size:70px;
+
+font-family:'Cinzel';
+
+color:#FFD700;
+
+text-shadow:
+0 0 20px gold;
+
+opacity:0;
+
+transform:scale(0.8);
+
+transition:0.5s;
+
+}
+
+#revealText.show{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+/* ================= */
+/* LETTER */
+/* ================= */
+
+.letterBox{
+
+background:
+linear-gradient(
+145deg,
+#F2E6C9,
+#E8D7A8
+);
+
+padding:50px;
+
+border-radius:22px;
+
+border:2px solid #C2A45C;
+
+text-align:center;
+
+box-shadow:
+0 0 45px rgba(255,215,0,0.4);
+
+max-width:420px;
+
+}
+
+.letterBox h1{
+
+font-family:'Great Vibes';
+
+font-size:48px;
+
+margin-bottom:20px;
+
+color:#4B0F1B;
+
+}
+
+/* ================= */
+/* ANIMATION */
+/* ================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* ================= */
+/* MARRON DIGITAL RAIN */
+/* ================= */
+
+.rainLine{
+
+position:absolute;
+
+top:-120px;
+
+width:2px;
+height:80px;
+
+/* marron gradient */
+
+background:linear-gradient(
+to bottom,
+#7A1F2E,
+#5A1220,
+transparent
+);
+
+opacity:0.8;
+
+filter:blur(0.2px);
+
+animation:rainFall linear;
+
+}
+
+/* smooth jatuh */
+
+@keyframes rainFall{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0.9;
+
+}
+
+100%{
+
+transform:translateY(120vh);
+
+opacity:0;
+
+}
+
+}
