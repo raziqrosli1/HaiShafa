@@ -20,7 +20,9 @@ href="style.css">
 
 <body>
 
+<!-- ================= -->
 <!-- LOADING -->
+<!-- ================= -->
 
 <section id="loadingSection">
 
@@ -30,7 +32,7 @@ href="style.css">
 
 <p class="loadingText">
 
-Preparing your surprise...
+Getting things ready...
 
 </p>
 
@@ -38,7 +40,9 @@ Preparing your surprise...
 
 </section>
 
+<!-- ================= -->
 <!-- INTRO -->
+<!-- ================= -->
 
 <section id="introSection">
 
@@ -50,7 +54,7 @@ Hi Shafa
 
 <p>
 
-Before opening your gift,
+Before opening your gift,  
 complete this small mission.
 
 </p>
@@ -65,7 +69,9 @@ Start Mission
 
 </section>
 
+<!-- ================= -->
 <!-- GAME -->
+<!-- ================= -->
 
 <section id="gameSection">
 
@@ -79,7 +85,9 @@ Start Mission
 
 </section>
 
+<!-- ================= -->
 <!-- CELEBRATION -->
+<!-- ================= -->
 
 <section id="celebrationSection">
 
@@ -101,11 +109,13 @@ Continue Journey
 
 </div>
 
-<div id="flowerContainer"></div>
+<div id="sparkleContainer"></div>
 
 </section>
 
+<!-- ================= -->
 <!-- CLUE -->
+<!-- ================= -->
 
 <section id="clueSection">
 
@@ -145,7 +155,9 @@ Enter Passcode
 
 </section>
 
+<!-- ================= -->
 <!-- PASSCODE -->
+<!-- ================= -->
 
 <section id="passcodeSection">
 
@@ -155,54 +167,31 @@ Enter Passcode
 Unlock Treasure
 </h2>
 
-<!-- PASSCODE DISPLAY -->
+<div class="passInputWrapper">
 
-<div id="dots">
-
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-
-</div>
-
-<!-- KEYPAD -->
-
-<div class="keypad">
-
-<button class="key">1</button>
-<button class="key">2</button>
-<button class="key">3</button>
-
-<button class="key">4</button>
-<button class="key">5</button>
-<button class="key">6</button>
-
-<button class="key">7</button>
-<button class="key">8</button>
-<button class="key">9</button>
-
-<!-- DELETE BUTTON -->
-
-<button class="key deleteKey">
-
-⌫
-
-</button>
-
-<button class="key">0</button>
-
-<button class="key emptyKey">
-
-</button>
+<input 
+type="password"
+maxlength="4"
+id="passInput"
+placeholder="Enter Code"
+inputmode="numeric"
+/>
 
 </div>
+
+<button id="submitCodeBtn">
+
+Enter
+
+</button>
 
 </div>
 
 </section>
 
+<!-- ================= -->
 <!-- ENVELOPE -->
+<!-- ================= -->
 
 <section id="envelopeSection">
 
@@ -220,7 +209,9 @@ S
 
 </section>
 
-<!-- REVEAL COUNTDOWN -->
+<!-- ================= -->
+<!-- COUNTDOWN -->
+<!-- ================= -->
 
 <section id="revealSection">
 
@@ -236,7 +227,9 @@ S
 
 </section>
 
+<!-- ================= -->
 <!-- LETTER -->
+<!-- ================= -->
 
 <section id="letterSection">
 
@@ -248,7 +241,7 @@ Happy Birthday Shafa
 
 </h1>
 
-<p>
+<p id="letterMessage">
 
 May Allah bless your days  
 with happiness,  
@@ -260,6 +253,16 @@ and beautiful memories ahead.
 </div>
 
 </section>
+
+<!-- ================= -->
+<!-- CREDIT -->
+<!-- ================= -->
+
+<p class="creditText">
+
+Crafted with care by Raziq
+
+</p>
 
 <script src="script.js"></script>
 
