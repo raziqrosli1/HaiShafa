@@ -1,5 +1,5 @@
 /* ================= */
-/* GET SECTION */
+/* SECTION GET */
 /* ================= */
 
 const loading =
@@ -28,6 +28,12 @@ document.getElementById("revealSection");
 
 const letter =
 document.getElementById("letterSection");
+
+const revealText =
+document.getElementById("revealText");
+
+const letterMessage =
+document.getElementById("letterMessage");
 
 
 /* ================= */
@@ -75,7 +81,6 @@ document.getElementById("gameArea");
 const counter =
 document.getElementById("heartCount");
 
-
 function spawnHeart(){
 
 if(total>=target) return;
@@ -95,17 +100,11 @@ heart.style.animationDuration =
 
 gameArea.appendChild(heart);
 
-
-/* auto remove */
-
 setTimeout(()=>{
 
 heart.remove();
 
 },6000);
-
-
-/* click */
 
 heart.onclick=()=>{
 
@@ -115,8 +114,7 @@ counter.innerText=total;
 
 heart.remove();
 
-createFlower();
-
+createSparkle();
 
 if(total>=target){
 
@@ -134,7 +132,6 @@ return;
 
 };
 
-
 setTimeout(()=>{
 
 spawnHeart();
@@ -145,32 +142,32 @@ spawnHeart();
 
 
 /* ================= */
-/* FLOWER EFFECT */
+/* SPARKLE */
 /* ================= */
 
-function createFlower(){
+function createSparkle(){
 
-let flower =
+let spark =
 document.createElement("div");
 
-flower.innerHTML="✨";
+spark.innerHTML="✨";
 
-flower.style.position="absolute";
+spark.style.position="absolute";
 
-flower.style.left=
+spark.style.left=
 Math.random()*100+"%";
 
-flower.style.top=
+spark.style.top=
 Math.random()*100+"%";
 
 document
-.getElementById("flowerContainer")
+.getElementById("sparkleContainer")
 
-.appendChild(flower);
+.appendChild(spark);
 
 setTimeout(()=>{
 
-flower.remove();
+spark.remove();
 
 },900);
 
@@ -178,7 +175,7 @@ flower.remove();
 
 
 /* ================= */
-/* NEXT CLUE */
+/* NEXT TO CLUE */
 /* ================= */
 
 document
@@ -210,46 +207,38 @@ passcode.style.display="flex";
 
 
 /* ================= */
-/* PASSCODE SYSTEM */
+/* PASSCODE */
 /* ================= */
 
-let input="";
+const passInput =
+document.getElementById("passInput");
 
-const correct="9834";
+const submitBtn =
+document.getElementById("submitCodeBtn");
 
-const dots=
-document.querySelectorAll(".dot");
+const correctCode="9834";
 
-document.querySelectorAll(".key")
+submitBtn.onclick=()=>{
 
-.forEach(key=>{
+checkCode();
 
-key.onclick=()=>{
+};
 
-if(key.innerText==="⌫"){
+passInput.addEventListener("keypress",
 
-input=input.slice(0,-1);
+function(e){
 
-updateDots();
+if(e.key==="Enter"){
 
-return;
-
-}
-
-if(input.length<4){
-
-input+=key.innerText;
-
-updateDots();
+checkCode();
 
 }
 
+});
 
-if(input.length===4){
+function checkCode(){
 
-setTimeout(()=>{
-
-if(input===correct){
+if(passInput.value===correctCode){
 
 passcode.style.display="none";
 
@@ -261,53 +250,15 @@ else{
 
 alert("Wrong Passcode");
 
-resetDots();
+passInput.value="";
 
 }
-
-},300);
-
-}
-
-};
-
-});
-
-
-function updateDots(){
-
-dots.forEach((dot,index)=>{
-
-if(index<input.length){
-
-dot.classList.add("active");
-
-}else{
-
-dot.classList.remove("active");
-
-}
-
-});
-
-}
-
-
-function resetDots(){
-
-input="";
-
-dots.forEach(dot=>{
-
-dot.classList.remove("active");
-
-});
 
 }
 
 
 /* ================= */
-/* ENVELOPE OPEN */
+/* ENVELOPE */
 /* ================= */
 
 document
@@ -320,7 +271,6 @@ document
 
 .style.transform="rotateX(180deg)";
 
-
 setTimeout(()=>{
 
 envelope.style.display="none";
@@ -330,57 +280,6 @@ startReveal();
 },900);
 
 };
-
-
-/* ================= */
-/* DIGITAL RAIN */
-/* ================= */
-
-function startMaroonRain(){
-
-setInterval(()=>{
-
-createRainLine();
-
-},30);
-
-}
-
-
-function createRainLine(){
-
-let line =
-document.createElement("div");
-
-line.className="rainLine";
-
-line.style.left =
-Math.random()*100+"vw";
-
-let height =
-40 + Math.random()*80;
-
-line.style.height =
-height+"px";
-
-line.style.opacity =
-0.4 + Math.random()*0.6;
-
-
-
-
-line.style.animationDuration =
-(1.8 + Math.random()*1.5)+"s";
-
-document.body.appendChild(line);
-
-setTimeout(()=>{
-
-line.remove();
-
-},3000);
-
-}
 
 
 /* ================= */
@@ -400,17 +299,13 @@ const words=[
 
 let index=0;
 
-
 function startReveal(){
-
-startMaroonRain();
 
 reveal.style.display="flex";
 
 showNextWord();
 
 }
-
 
 function showNextWord(){
 
@@ -422,7 +317,9 @@ reveal.style.display="none";
 
 letter.style.display="flex";
 
-},1200);
+startTypewriter();
+
+},2000);
 
 return;
 
@@ -431,22 +328,98 @@ return;
 revealText.innerText=
 words[index];
 
-revealText.style.opacity=0;
+if(words[index]==="1"){
 
-revealText.style.transform="scale(0.6)";
+startFireworks();
 
-
-setTimeout(()=>{
-
-revealText.style.opacity=1;
-
-revealText.style.transform="scale(1)";
-
-},80);
-
+}
 
 index++;
 
-setTimeout(showNextWord,900);
+setTimeout(showNextWord,2000);
+
+}
+
+
+/* ================= */
+/* FIREWORKS */
+/* ================= */
+
+function startFireworks(){
+
+setInterval(createFirework,500);
+
+}
+
+function createFirework(){
+
+let fire =
+document.createElement("div");
+
+fire.className="firework";
+
+fire.style.left =
+Math.random()*100+"vw";
+
+fire.style.top =
+Math.random()*50+"vh";
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},1200);
+
+}
+
+
+/* ================= */
+/* TYPEWRITER LETTER */
+/* ================= */
+
+function startTypewriter(){
+
+const text =
+
+"Happy Birthday Shafa.\n\n"
+
++ "I hope today brings you lots of smiles and good moments. "
++ "You deserve to feel appreciated and surrounded by good things.\n\n"
+
++ "May this new year in your life be filled with success, "
++ "peace of mind, and many small happy moments that make your days better.\n\n"
+
++ "Honestly, I'm glad I got the chance to know you. "
++ "You're someone who feels calm, kind, and easy to be around.\n\n"
+
++ "I hope whatever dreams you're working towards "
++ "become easier to reach, step by step.\n\n"
+
++ "And I hope this small gift can make your day "
++ "just a little bit more special.";
+
+let i=0;
+
+letterMessage.innerHTML="";
+
+function typing(){
+
+if(i<text.length){
+
+letterMessage.innerHTML+=
+
+text.charAt(i);
+
+i++;
+
+setTimeout(typing,40);
+
+}
+
+}
+
+typing();
 
 }
