@@ -391,9 +391,6 @@ const text =
 + "May this new year in your life be filled with success, "
 + "peace of mind, and many small happy moments that make your days better.\n\n"
 
-+ "Honestly, I'm glad I got the chance to know you. "
-+ "You're someone who feels calm, kind, and easy to be around.\n\n"
-
 + "I hope whatever dreams you're working towards "
 + "become easier to reach, step by step.\n\n"
 
