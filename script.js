@@ -216,7 +216,7 @@ document.getElementById("passInput");
 const submitBtn =
 document.getElementById("submitCodeBtn");
 
-const correctCode="9834";
+const correctCode="9632";
 
 submitBtn.onclick=()=>{
 
