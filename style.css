@@ -630,9 +630,13 @@ width:100%;
 
 font-family:'Great Vibes';
 
-font-size:42px;
+font-size:46px;
 
-margin-bottom:18px;
+margin-bottom:10px;
+
+text-align:center;
+
+letter-spacing:1px;
 
 color:#4B0F1B;
 
@@ -642,7 +646,11 @@ color:#4B0F1B;
 
 font-size:15px;
 
-line-height:1.6;
+line-height:1.8;
+
+text-align:center;
+
+padding:0 10px;
 
 color:#4B0F1B;
 
